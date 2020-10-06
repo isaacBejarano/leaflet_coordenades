@@ -1,0 +1,21 @@
+{
+	"name": "leaflet",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"scripts": {
+		"sass": "node-sass sass -o src/ex1/views",
+		"sass:watch": "node-sass -w sass -o src/ex1/views"
+	},
+	"keywords": [],
+	"author": "Isaac Bejarano",
+	"license": "ISC",
+	"devDependencies": {
+		"css-loader": "^4.3.0",
+		"style-loader": "^1.3.0"
+	},
+	"dependencies": {
+		"@types/leaflet": "^1.5.17",
+		"@types/node": "^14.11.5"
+	}
+}

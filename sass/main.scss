@@ -1,0 +1,43 @@
+$breakpoint_lg: 768px;
+$color1: olivedrab;
+$color2: #3c3c0d;
+$color3: olive;
+
+body {
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	background-image: url("../../../assets/leaves_V.jpg");
+	background-color: #94927d;
+	background-blend-mode: multiply;
+	background-position: top;
+	background-size: cover;
+	background-size: 768px;
+
+	header {
+		max-width: $breakpoint_lg;
+		background-color: $color3;
+	}
+
+	main {
+		max-width: $breakpoint_lg;
+		#mapid {
+			width: 100%;
+			min-height: $breakpoint_lg;
+		}
+	}
+}
+
+// custom CSS
+.text-beige {
+	color: beige;
+}
+
+.border-olive {
+	border-color: $color2 !important;
+}
+
+.bg-olive {
+	background-color: $color1;
+}
