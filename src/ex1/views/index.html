@@ -4,6 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Leaflet - coordenades</title>
+		<!-- favicon -->
+		<link rel="icon" type="image/png" href="../../../assets/leaflet_icon.ico" />
 		<!-- Bootstrap CSS -->
 		<link
 			rel="stylesheet"
@@ -28,35 +30,31 @@
 			<hgroup>
 				<h1 class="font-weight-norma m-0">Leaflet</h1>
 				<h2 class="h3 font-weight-lighter">GPS coordinates</h2>
-				<h3 class="h4 font-weight-lighter font-italic mt-3">Lock map on marker</h3>
+				<h3 class="h4 font-weight-lighter font-italic mt-3">Add a marker</h3>
 			</hgroup>
 		</header>
 
-		<main class="mx-auto p-0 pt-3">
-			<!-- GPS -->
-			<section class="bg-olive border border-olive shadow-lg pb-1 pt-3 px-4">
-				<p id="outlet-place" class="h5 font-weight-lighter">
-					<b class="text-beige">Place:</b>
-					<strong>
-						<span class="text-dark">loading place...</span>
-					</strong>
+		<main class="mx-auto p-0">
+			<!-- GPS outlet -->
+			<section class="bg-olive border border-olive shadow-lg my-2 p-3">
+				<p id="outlet-address" class="h5 font-weight-lighter">
+					<b class="text-olivedrab">Address:</b>
+					<span class="text-cadetblue"></span>
 				</p>
-				<p id="outlet-lat" class="h5 font-weight-lighter">
-					<b class="text-beige">Latitude:</b>
-					<strong>
-						<span class="text-dark">loading latitude...</span>
-					</strong>
-				</p>
-				<p id="outlet-long" class="h5 font-weight-lighter">
-					<b class="text-beige">Longitude:</b>
-					<strong>
-						<span class="text-dark">loading longitude...</span>
-					</strong>
+				<p id="outlet-gps" class="h5 font-weight-lighter mb-0">
+					<b class="text-olivedrab">GPS:</b>
+					<span class="text-cadetblue"></span>
 				</p>
 			</section>
 
 			<!-- Leaflet Map -->
-			<section id="mapid" class="bg-light border border-olive rounded-bottom mt-3 p-3"></section>
+			<section id="barcelona" class="bg-light border border-olive p-3"></section>
+
+			<!-- Map center -->
+			<p id="map-center" class="bg-light text-dark font-weight-lighter border border-olive rounded-bottom p-1">
+				<b>Map center:</b>
+				<span></span>
+			</p>
 		</main>
 
 		<!-- Laflet JS -->

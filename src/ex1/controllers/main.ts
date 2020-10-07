@@ -1,40 +1,43 @@
-// (pre) Leaflet + Typescript -> Leaflet is type "L" -> npm i @types/leaflet
+// npm i @types/leaflet => Leaflet + Typescript -> Leaflet is type "L"
 
 // DOM refs
-const outletPlace = document.querySelector("#outlet-place span") as HTMLParagraphElement;
-const outletLat = document.querySelector("#outlet-lat span") as HTMLParagraphElement;
-const outletLong = document.querySelector("#outlet-long span") as HTMLParagraphElement;
+const markerAddress = document.querySelector("#outlet-address span") as HTMLSpanElement;
+const markerGPS = document.querySelector("#outlet-gps span") as HTMLSpanElement;
+const mapCenter = document.querySelector("#map-center span") as HTMLSpanElement;
 
-// instances
-(() => {
-	new Coordinate(41.387011, 2.170048, "Plaça Catalunya");
-	new Coordinate(41.386923, 2.165952, "Balmes, 16");
-})();
+// Point - instances
+const catalunyaSq = new Point(41.387011, 2.170048, "Plaça Catalunya");
+const balmes16 = new Point(41.386923, 2.165952, "C/ Balmes, 16");
 
-// outlet <- Plç.Catalunya
-outletPlace.textContent = Coordinate.getlist[0].getPlace;
-outletLat.textContent = "" + Coordinate.getlist[0].getLatitude; // str
-outletLong.textContent = "" + Coordinate.getlist[0].getLongitude; // str
+// DOM - feedback <- Plç.Catalunya
+markerAddress.textContent = balmes16.AdresstoString();
+markerGPS.textContent = balmes16.GPStoString();
+mapCenter.textContent = catalunyaSq.AdresstoString() + ". " + catalunyaSq.GPStoString();
 
-// Map setup
-const zoom = 16;
-// prettier-ignore
-const myMap =
-	L.map("mapid")
-		.setView([
-			Coordinate.getlist[0].getLatitude,
-			Coordinate.getlist[0].getLongitude
-		], zoom);
+// L.map + L.map.zomm  [0-18]
+let mapBCN: L.Map = L.map("barcelona");
+const minZ: number = 4; // ~ Spain
+const maxZ: number = 16; // ~ Plç.Catalunya
 
-// OpenStreetMap
-const tile_url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"; // open tiles
-const attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
+mapBCN.setView(catalunyaSq.getCoordinates, minZ); // ~ Spain
 
-L.tileLayer(tile_url, { attribution }).addTo(myMap); // tiles ~ geographic images... get myMap injected
+// FX: zoom in
+let zoomIncrement: number = 4;
+let zommSpeed: number = 250;
+
+for (let i = minZ; i < maxZ; i += zoomIncrement) {
+	setTimeout(() => mapBCN.setZoom(i + zoomIncrement), i * zommSpeed);
+}
+
+// add Tiles
+const tile_url: string = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"; // open tiles
+const attribution: string = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
+
+L.tileLayer(tile_url, { attribution }).addTo(mapBCN);
 
 // marker
-var marker = L.marker([Coordinate.getlist[0].getLatitude, Coordinate.getlist[0].getLongitude]).addTo(myMap);
+// var marker = L.marker(balmes16.getCoordinates).addTo(mapBCN);
 
 // popup
-var popup = marker.bindPopup("<b>Hello world!</b><br />I am a popup.");
-popup.openPopup(); // IIFn
+// var popup = marker.bindPopup("<b>Hello world!</b><br />I am a popup.");
+// popup.openPopup(); // IIFn

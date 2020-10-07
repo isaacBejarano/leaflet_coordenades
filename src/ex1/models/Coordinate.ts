@@ -1,5 +1,6 @@
-class Coordinate {
-	private static readonly list: Coordinate[] = [];
+class Point {
+	private static readonly list: Point[] = [];
+	private coordinates: [number, number];
 
 	constructor(
 		// prettier-ignore
@@ -7,7 +8,8 @@ class Coordinate {
 		private longitude: number,
 		private place: string
 	) {
-		Coordinate.list.push(this); // instances[]
+		this.coordinates = [this.latitude, this.longitude];
+		Point.list.push(this); // instances[]
 	}
 
 	// getters
@@ -24,6 +26,18 @@ class Coordinate {
 	}
 
 	static get getlist() {
-		return Coordinate.list;
+		return Point.list;
+	}
+
+	get getCoordinates(): [number, number] {
+		return this.coordinates;
+	}
+
+	// methods
+	AdresstoString() {
+		return this.place;
+	}
+	GPStoString() {
+		return this.latitude + ", " + this.longitude;
 	}
 }
