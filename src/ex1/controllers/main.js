@@ -16,7 +16,7 @@ var mapBCN = L.map("barcelona");
 var minZ = 4; // ~ Spain
 var maxZ = 16; // ~ Plç.Catalunya
 mapBCN.setView(catalunyaSq.getCoordinates, minZ); // ~ Spain
-// FX: zoom in
+// effect -> zoom in
 var zoomIncrement = 4;
 var zommSpeed = 250;
 var _loop_1 = function (i) {
@@ -30,7 +30,7 @@ var tile_url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"; // open til
 var attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
 L.tileLayer(tile_url, { attribution: attribution }).addTo(mapBCN);
 // marker
-L.marker(balmes16.getCoordinates).addTo(mapBCN);
-// popup
-// var popup = marker.bindPopup("<b>Hello world!</b><br />I am a popup.");
-// popup.openPopup(); // IIFn
+// prettier-ignore
+L.marker(balmes16.getCoordinates)
+    .addTo(mapBCN)
+    .bindPopup("\n\t\t<b class=\"d-block pb-2\">Restaurant Centfocs</b>\n\t\t<span class=\"d-block\">Mediterranean Restaurant</span>\n\t\t<span class=\"d-block\">Carrer de Balmes, 16, 08007 Barcelona</span>\n\t");
