@@ -1,7 +1,5 @@
 $breakpoint_lg: 768px;
-$color1: olivedrab;
-$color2: #3c3c0d;
-$color3: olive;
+$color: olive;
 
 body {
 	user-select: none;
@@ -17,27 +15,31 @@ body {
 
 	header {
 		max-width: $breakpoint_lg;
-		background-color: $color3;
+		background-color: $color;
 	}
 
 	main {
 		max-width: $breakpoint_lg;
-		#mapid {
+		#barcelona {
 			width: 100%;
-			min-height: $breakpoint_lg;
+			height: $breakpoint_lg / 2; // 50%
 		}
 	}
 }
 
 // custom CSS
-.text-beige {
-	color: beige;
+.text-olivedrab {
+	color: lighten($color, 5%);
+}
+
+.text-cadetblue {
+	color: cadetblue;
 }
 
 .border-olive {
-	border-color: $color2 !important;
+	border-color: $color !important;
 }
 
 .bg-olive {
-	background-color: $color1;
+	background-color: darken($color, 18%);
 }

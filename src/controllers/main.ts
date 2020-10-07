@@ -5,9 +5,9 @@ const markerAddress = document.querySelector("#outlet-address span") as HTMLSpan
 const markerGPS = document.querySelector("#outlet-gps span") as HTMLSpanElement;
 const mapCenter = document.querySelector("#map-center span") as HTMLSpanElement;
 
-// Point - instances
-const catalunyaSq = new Point(41.387011, 2.170048, "Plaça Catalunya");
-const balmes16 = new Point(41.386923, 2.165952, "C/ Balmes, 16");
+// Pointer - instances
+const catalunyaSq = new Pointer(41.387011, 2.170048, "Plaça Catalunya");
+const balmes16 = new Pointer(41.386923, 2.165952, "C/ Balmes, 16");
 
 // DOM - feedback <- Plç.Catalunya
 markerAddress.textContent = balmes16.AdresstoString();

@@ -4,9 +4,9 @@
 var markerAddress = document.querySelector("#outlet-address span");
 var markerGPS = document.querySelector("#outlet-gps span");
 var mapCenter = document.querySelector("#map-center span");
-// Point - instances
-var catalunyaSq = new Point(41.387011, 2.170048, "Plaça Catalunya");
-var balmes16 = new Point(41.386923, 2.165952, "C/ Balmes, 16");
+// Pointer - instances
+var catalunyaSq = new Pointer(41.387011, 2.170048, "Plaça Catalunya");
+var balmes16 = new Pointer(41.386923, 2.165952, "C/ Balmes, 16");
 // DOM - feedback <- Plç.Catalunya
 markerAddress.textContent = balmes16.AdresstoString();
 markerGPS.textContent = balmes16.GPStoString();

@@ -1,5 +1,5 @@
-class Point {
-	private static readonly list: Point[] = [];
+class Pointer {
+	private static readonly list: Pointer[] = [];
 	private coordinates: [number, number];
 
 	constructor(
@@ -9,7 +9,7 @@ class Point {
 		private place: string
 	) {
 		this.coordinates = [this.latitude, this.longitude];
-		Point.list.push(this); // instances[]
+		Pointer.list.push(this); // instances[]
 	}
 
 	// getters
@@ -26,7 +26,7 @@ class Point {
 	}
 
 	static get getlist() {
-		return Point.list;
+		return Pointer.list;
 	}
 
 	get getCoordinates(): [number, number] {

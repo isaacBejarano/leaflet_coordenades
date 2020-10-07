@@ -4,8 +4,8 @@
 	"description": "",
 	"private": true,
 	"scripts": {
-		"sass": "node-sass sass -o src/ex1/views",
-		"sass:watch": "node-sass -w sass -o src/ex1/views"
+		"sass": "node-sass sass -o src/views",
+		"sass:watch": "node-sass -w sass -o src/views"
 	},
 	"keywords": [],
 	"author": "Isaac Bejarano",
