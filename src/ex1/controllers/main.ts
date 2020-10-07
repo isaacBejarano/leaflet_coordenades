@@ -36,7 +36,7 @@ const attribution: string = '&copy; <a href="https://www.openstreetmap.org/">Ope
 L.tileLayer(tile_url, { attribution }).addTo(mapBCN);
 
 // marker
-// var marker = L.marker(balmes16.getCoordinates).addTo(mapBCN);
+L.marker(balmes16.getCoordinates).addTo(mapBCN);
 
 // popup
 // var popup = marker.bindPopup("<b>Hello world!</b><br />I am a popup.");

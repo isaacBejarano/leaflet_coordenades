@@ -30,7 +30,7 @@ var tile_url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"; // open til
 var attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
 L.tileLayer(tile_url, { attribution: attribution }).addTo(mapBCN);
 // marker
-// var marker = L.marker(balmes16.getCoordinates).addTo(mapBCN);
+L.marker(balmes16.getCoordinates).addTo(mapBCN);
 // popup
 // var popup = marker.bindPopup("<b>Hello world!</b><br />I am a popup.");
 // popup.openPopup(); // IIFn
