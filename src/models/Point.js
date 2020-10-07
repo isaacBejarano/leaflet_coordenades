@@ -1,57 +1,42 @@
 "use strict";
-var Pointer = /** @class */ (function () {
-    function Pointer(
+var Point = /** @class */ (function () {
+    function Point(
     // prettier-ignore
     latitude, longitude, place) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.place = place;
         this.coordinates = [this.latitude, this.longitude];
-        Pointer.list.push(this); // instances[]
+        Point.list.push(this); // instances[]
     }
-    Object.defineProperty(Pointer.prototype, "getLatitude", {
+    Object.defineProperty(Point, "getlist", {
         // getters
         get: function () {
-            return this.latitude;
+            return Point.list;
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(Pointer.prototype, "getLongitude", {
-        get: function () {
-            return this.longitude;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Pointer.prototype, "getPlace", {
-        get: function () {
-            return this.place;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Pointer, "getlist", {
-        get: function () {
-            return Pointer.list;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Pointer.prototype, "getCoordinates", {
+    Object.defineProperty(Point.prototype, "getCoordinates", {
         get: function () {
             return this.coordinates;
         },
         enumerable: false,
         configurable: true
     });
-    // methods
-    Pointer.prototype.AdresstoString = function () {
-        return this.place;
+    // toString
+    Point.prototype.AdressToString = function () {
+        return this.place; // str
     };
-    Pointer.prototype.GPStoString = function () {
-        return this.latitude + ", " + this.longitude;
+    Point.prototype.GPStoString = function () {
+        return this.latitude + ", " + this.longitude; // str
     };
-    Pointer.list = [];
-    return Pointer;
+    Point.prototype.latitudeToString = function () {
+        return "" + this.latitude; // str
+    };
+    Point.prototype.longitudeToString = function () {
+        return "" + this.longitude; // str
+    };
+    Point.list = [];
+    return Point;
 }());

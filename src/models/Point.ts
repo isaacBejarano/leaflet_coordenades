@@ -1,5 +1,5 @@
-class Pointer {
-	private static readonly list: Pointer[] = [];
+class Point {
+	private static readonly list: Point[] = [];
 	private coordinates: [number, number];
 
 	constructor(
@@ -9,35 +9,29 @@ class Pointer {
 		private place: string
 	) {
 		this.coordinates = [this.latitude, this.longitude];
-		Pointer.list.push(this); // instances[]
+		Point.list.push(this); // instances[]
 	}
 
 	// getters
-	get getLatitude() {
-		return this.latitude;
-	}
-
-	get getLongitude() {
-		return this.longitude;
-	}
-
-	get getPlace() {
-		return this.place;
-	}
-
 	static get getlist() {
-		return Pointer.list;
+		return Point.list;
 	}
 
 	get getCoordinates(): [number, number] {
 		return this.coordinates;
 	}
 
-	// methods
-	AdresstoString() {
-		return this.place;
+	// toString
+	AdressToString() {
+		return this.place; // str
 	}
 	GPStoString() {
-		return this.latitude + ", " + this.longitude;
+		return this.latitude + ", " + this.longitude; // str
+	}
+	latitudeToString() {
+		return "" + this.latitude; // str
+	}
+	longitudeToString() {
+		return "" + this.longitude; // str
 	}
 }

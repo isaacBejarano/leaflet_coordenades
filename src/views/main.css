@@ -4,7 +4,7 @@ body {
   -ms-user-select: none;
   -moz-user-select: none;
   background-image: url("../../../assets/leaves_V.jpg");
-  background-color: #94927d;
+  background-color: dimgray;
   background-blend-mode: multiply;
   background-position: top;
   background-size: cover;

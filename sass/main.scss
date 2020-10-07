@@ -1,5 +1,7 @@
 $breakpoint_lg: 768px;
-$color: olive;
+$color1: olive;
+$color2: cadetblue;
+$color3: gainsboro;
 
 body {
 	user-select: none;
@@ -7,7 +9,7 @@ body {
 	-ms-user-select: none;
 	-moz-user-select: none;
 	background-image: url("../../../assets/leaves_V.jpg");
-	background-color: #94927d;
+	background-color: darken($color3, 45%);
 	background-blend-mode: multiply;
 	background-position: top;
 	background-size: cover;
@@ -15,7 +17,7 @@ body {
 
 	header {
 		max-width: $breakpoint_lg;
-		background-color: $color;
+		background-color: $color1;
 	}
 
 	main {
@@ -29,17 +31,17 @@ body {
 
 // custom CSS
 .text-olivedrab {
-	color: lighten($color, 5%);
+	color: lighten($color1, 5%);
 }
 
 .text-cadetblue {
-	color: cadetblue;
+	color: $color2;
 }
 
 .border-olive {
-	border-color: $color !important;
+	border-color: $color1 !important;
 }
 
 .bg-olive {
-	background-color: darken($color, 18%);
+	background-color: darken($color1, 18%);
 }
