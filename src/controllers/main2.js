@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var leaflet_1 = __importDefault(require("leaflet"));
 var Pointer_1 = __importDefault(require("../models/Pointer")); // JS module
 var main1_1 = require("./main1"); // JS module
-require("../views/main.css"); // CSS module
 var markerNext = main1_1.markerOne;
 main1_1.mapBCN.addEventListener("click", function (e) {
     // 1. Point - user new instances

@@ -3,7 +3,7 @@
 
 import L from "leaflet";
 import Pointer from "../models/Pointer"; // JS module
-// import "../views/main.css"; // CSS module
+import "../styles/main.css";
 
 // 1. Point - instances
 (() => {

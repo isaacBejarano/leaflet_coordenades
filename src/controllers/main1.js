@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.markerOne = exports.markerGPS = exports.markerAddress = exports.mapBCN = void 0;
 var leaflet_1 = __importDefault(require("leaflet"));
 var Pointer_1 = __importDefault(require("../models/Pointer")); // JS module
-// import "../views/main.css"; // CSS module
+require("../styles/main.css");
 // 1. Point - instances
 (function () {
     new Pointer_1.default(41.386983, 2.170078, "Plaça Catalunya");

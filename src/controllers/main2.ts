@@ -1,7 +1,6 @@
 import L from "leaflet";
 import Pointer from "../models/Pointer"; // JS module
 import { mapBCN, markerAddress, markerGPS, markerOne } from "./main1"; // JS module
-import "../views/main.css"; // CSS module
 
 let markerNext: L.Marker = markerOne;
 
