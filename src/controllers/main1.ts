@@ -3,7 +3,7 @@
 
 import L from "leaflet";
 import Pointer from "../models/Pointer"; // JS module
-import "../views/main.css"; // CSS module
+// import "../views/main.css"; // CSS module
 
 // 1. Point - instances
 (() => {
@@ -39,7 +39,7 @@ const tiles: L.TileLayer =
 	.addTo(mapBCN);
 
 // 6. Marker - add
-let marker: L.Marker = L.marker(Pointer.getlist[1].getCoordinates)
+let markerOne: L.Marker = L.marker(Pointer.getlist[1].getCoordinates)
 	// prettier-ignore
 	.addTo(mapBCN).bindPopup(`
 			<b class="d-block pb-2">Restaurant Centfocs</b>
@@ -55,4 +55,4 @@ for (let i = minZoom; i < maxZoom; i += zoomIncrement) {
 	setTimeout(() => mapBCN.setZoom(i + zoomIncrement), i * zommSpeed);
 }
 
-export { mapBCN, markerAddress, markerGPS, marker };
+export { mapBCN, markerAddress, markerGPS, markerOne };

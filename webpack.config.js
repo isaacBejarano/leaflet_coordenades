@@ -2,15 +2,15 @@ const path = require("path");
 const HTMLplugin = require("html-webpack-plugin");
 
 module.exports = {
-	entry: "./src/controllers/main1.js",
+	entry: "./src/controllers/main2.js",
 	output: {	
-		filename: "bundle1.js",
-		path: path.resolve(__dirname, "dist/ex1"),
+		filename: "bundle2.js",
+		path: path.resolve(__dirname, "dist/ex2"),
 	},
 	// HTML
 	plugins: [
 		new HTMLplugin({
-			template: "./src/views/ex1.html",
+			template: "./src/views/ex2.html",
 		}),
 	],
 	// MODULE

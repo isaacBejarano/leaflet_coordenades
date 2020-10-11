@@ -5,10 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.marker = exports.markerGPS = exports.markerAddress = exports.mapBCN = void 0;
+exports.markerOne = exports.markerGPS = exports.markerAddress = exports.mapBCN = void 0;
 var leaflet_1 = __importDefault(require("leaflet"));
 var Pointer_1 = __importDefault(require("../models/Pointer")); // JS module
-require("../views/main.css"); // CSS module
+// import "../views/main.css"; // CSS module
 // 1. Point - instances
 (function () {
     new Pointer_1.default(41.386983, 2.170078, "Plaça Catalunya");
@@ -40,10 +40,10 @@ var tiles =
 leaflet_1.default.tileLayer(tile_url, { attribution: attribution })
     .addTo(mapBCN);
 // 6. Marker - add
-var marker = leaflet_1.default.marker(Pointer_1.default.getlist[1].getCoordinates)
+var markerOne = leaflet_1.default.marker(Pointer_1.default.getlist[1].getCoordinates)
     // prettier-ignore
     .addTo(mapBCN).bindPopup("\n\t\t\t<b class=\"d-block pb-2\">Restaurant Centfocs</b>\n\t\t\t<span class=\"d-block\">Meditearranean Restaurant</span>\n\t\t\t<span class=\"d-block\">" + Pointer_1.default.getlist[1].AdressToString() + "</span>\n\t\t");
-exports.marker = marker;
+exports.markerOne = markerOne;
 // 7. Zoom -> effect zoom in
 var zoomIncrement = 0.5;
 var zommSpeed = 275;
